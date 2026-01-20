@@ -1,9 +1,9 @@
 ## K8s-Ingress-project
 
-## Step 1: Create an AWS EC2 instance with Ubuntu
+## Step 1 = Create an AWS EC2 instance with Ubuntu
 Instance Size: 2 CPUs and above, 2gib memory and above, 25 GB Storage and above
 
-## Step 2 : Install Docker
+## Step 2 = Install Docker
 ````
 sudo apt update -y
 sudo apt install docker.io -y
@@ -14,13 +14,13 @@ newgrp docker
 sudo chmod 777 /var/run/docker.sock
 ````
 
-## Download & Install kubectl
+## Step 3 = Download & Install kubectl
 Download the latest release with the command:
 ````
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 ````
 
-Install kubectl:
+ Install kubectl:
 ````
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ````
@@ -54,3 +54,4 @@ Note: Only If Minikube may Fail to start, or Use another driver (like containerd
 minikube stop
 minikube start --driver=docker
 ````
+

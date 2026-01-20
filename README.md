@@ -34,7 +34,7 @@ mv ./kubectl ~/.local/bin/kubectl
 kubectl version --client
 ````
 
-## Step 4: Install Minikube
+## Step 4 = Install Minikube
 ````
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 ````
@@ -53,5 +53,10 @@ Note: Only If Minikube may Fail to start, or Use another driver (like containerd
 ````
 minikube stop
 minikube start --driver=docker
+````
+
+## Step 5 = Installs & runs NGINX Ingress Controller (Enables HTTP/HTTPS routing)
+````
+minikube addons enable ingress
 ````
 

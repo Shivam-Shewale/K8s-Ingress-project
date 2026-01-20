@@ -60,3 +60,7 @@ minikube start --driver=docker
 minikube addons enable ingress
 ````
 
+## Step 6 = create Deployment, Service & Ingress yaml file 
+
+## step 7 = Apply Deployment, Service & Ingress yaml file
+

@@ -14,3 +14,43 @@ newgrp docker
 sudo chmod 777 /var/run/docker.sock
 ````
 
+## Download & Install kubectl
+Download the latest release with the command:
+````
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+````
+
+Install kubectl:
+````
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+````
+
+````
+chmod +x kubectl
+mkdir -p ~/.local/bin
+mv ./kubectl ~/.local/bin/kubectl
+````
+````
+kubectl version --client
+````
+
+## Step 4: Install Minikube
+````
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+````
+````
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+````
+````
+minikube start
+minikube start --driver=docker
+````
+````
+kubectl get nodes
+````
+
+Note: Only If Minikube may Fail to start, or Use another driver (like containerd or a VM driver). Must restart Minikube and explicitly tell it to use Docker:
+````
+minikube stop
+minikube start --driver=docker
+````

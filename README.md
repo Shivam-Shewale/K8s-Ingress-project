@@ -3,8 +3,8 @@
 <h4>Instance Size: 2 CPUs and above, 2gib memory and above, 25 GB Storage and above
 
 <h2> Step 2 : Install Docker
-sudo apt update -y
-sudo apt install docker.io -y
+<sudo apt update -y
+<sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker ubuntu

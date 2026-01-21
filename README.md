@@ -1,20 +1,40 @@
 ## K8s-Ingress-project
+---
+
+## 🧰 Prerequisites
+
+- Ubuntu Linux (AWS EC2)
+- Internet access
+- User with sudo privileges
+
+---
 
 ## Step 1 = Create an AWS EC2 instance with Ubuntu
 Instance Size: 2 CPUs and above, 2gib memory and above, 25 GB Storage and above
 
-## Step 2 = Install Docker
+# 🔧 STEP 2 : Install Docker
+
+### Update system
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+## Step 3 = Install Docker
 ````
 sudo apt update -y
 sudo apt install docker.io -y
+````
+````
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo usermod -aG docker ubuntu
+````
+```
+sudo usermod -aG docker $USER
 newgrp docker
 sudo chmod 777 /var/run/docker.sock
 ````
 
-## Step 3 = Download & Install kubectl
+## Step 4 = Download & Install kubectl
 Download the latest release with the command:
 ````
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -34,7 +54,7 @@ mv ./kubectl ~/.local/bin/kubectl
 kubectl version --client
 ````
 
-## Step 4 = Install Minikube
+## Step 5 = Install Minikube
 ````
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 ````
@@ -55,12 +75,17 @@ minikube stop
 minikube start --driver=docker
 ````
 
-## Step 5 = Installs & runs NGINX Ingress Controller (Enables HTTP/HTTPS routing)
+## Step 6 = Installs & runs NGINX Ingress Controller (Enables HTTP/HTTPS routing)
 ````
 minikube addons enable ingress
 ````
 
-## Step 6 = create Deployment, Service & Ingress yaml file 
+## Step 7 = create Deployment, Service & Ingress yaml file 
 
-## step 7 = Apply Deployment, Service & Ingress yaml file
+## step 8 = Apply Deployment, Service & Ingress yaml file
+```
+kubectl apply -f .
+```
+
+
 

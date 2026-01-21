@@ -1,7 +1,7 @@
 ## K8s-Ingress-project
 ---
 
-## 🧰 Prerequisites
+## Prerequisites
 
 - Ubuntu Linux (AWS EC2)
 - Internet access
@@ -10,8 +10,9 @@
 ---
 
 ## Step 1 = Create an AWS EC2 instance with Ubuntu
+```
 Instance Size: 2 CPUs and above, 2gib memory and above, 25 GB Storage and above
-
+```
 # 🔧 STEP 2 : Install Docker
 
 ### Update system
